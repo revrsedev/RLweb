@@ -68,4 +68,3 @@ class BlogPost(models.Model):
     def banner_image_url(self):
         # If you want to use the same image for the banner as well, or define another field
         return self.image_url
-    
