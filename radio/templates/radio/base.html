@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}RitmoLatinos - La radio que prende tus sentidos{% endblock %}</title>
+  <link rel="icon" href="{% static 'images/favicon.png' %}" sizes="16x16">
+  <link rel="stylesheet" href="{% static 'css/lib/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/remixicon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lightcase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lib/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  {% include 'radio/header.html' %}
+  <div class="preloader">
+    <div class="preloader-container">
+      <div class="preloader-icon">
+        <i class="ri-headphone-line"></i>
+        <i class="ri-radio-line"></i>
+      </div>
+      <p><span>Radio</span> RitmoLatinos</p>
+    </div>
+  </div>
+  <div class="scroll-top">
+    <a href="#"><i class="ri-arrow-up-line"></i></a>
+  </div>
+  {% block content %}{% endblock %}
+
+  {% include 'radio/footer.html' %}
+  <!-- jQuery library -->
+  <script src="{% static 'js/lib/jquery-3.6.0.min.js' %}"></script>
+  <!-- bootstrap 5 js -->
+  <script src="{% static 'js/lib/bootstrap.bundle.min.js' %}"></script>
+  <!-- audio player js -->
+  <script src="{% static 'js/lib/maudio.js' %}"></script>
+  <!-- slick slider js -->
+  <script src="{% static 'js/lib/slick.min.js' %}"></script>
+  <!-- wow js -->
+  <script src="{% static 'js/lib/wow.min.js' %}"></script>
+  <!-- contact js -->
+  <script src="{% static 'js/contact.js' %}"></script>
+  <!-- main js -->
+  <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

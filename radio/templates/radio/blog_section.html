@@ -1,0 +1,45 @@
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+<!-- blog section start -->
+<section class="pt-120 pb-120 section-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <div class="section-top">
+          <span class="top-title">Blog</span>
+          <h2 class="section-title">Nuestras ultimas noticias</h2>
+        </div>
+      </div>
+    </div><!-- row end -->
+    <div class="row gy-4">
+      {% for post in posts %}
+      <div class="col-lg-4 col-md-6">
+        <div class="blog-item">
+          <div class="blog-thumb">
+            <a href="{% url 'radio:blog_details' post.id %}" class="d-block h-100">
+              <img src="{{ post.image.url }}" alt="image">
+            </a>
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="single-meta">{{ post.author }}</span>
+              <span class="single-meta">{{ post.publish_date }}</span>
+            </div>
+            <h4 class="blog-title">
+              <a href="{% url 'radio:blog_details' post.id %}">{{ post.title }}</a>
+            </h4>
+            <a href="{% url 'radio:blog_details' post.id %}" class="blog-btn">Leer mas..</a>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+        <p>No se encontro nigun blog..</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+
+  

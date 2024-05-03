@@ -1,0 +1,19 @@
+{% load static %}
+
+<!-- Page Banner Section -->
+<section class="inner-page-banner" style="background-image: url('{% static banner_image %}');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h2 class="inner-page-title text-white">{{ page_title }}</h2>
+            <ul class="page-breadcrumb">
+                {% for breadcrumb in breadcrumbs %}
+                    {% if forloop.last %}
+                        <li>{{ breadcrumb.name }}</li>
+                    {% else %}
+                        <li><a href="{{ breadcrumb.url }}">{{ breadcrumb.name }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>

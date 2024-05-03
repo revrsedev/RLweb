@@ -1,0 +1,63 @@
+{% load static %}
+<!-- Contact Info Section Start -->
+<section class="pt-120 pb-120 section-bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-top">
+            <span class="top-title">Contact</span>
+            <h2 class="section-title">Contact Info</h2>
+          </div>
+        </div>
+      </div><!-- Row end -->
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="contact-item">
+            <div class="top">
+              <div class="icon">
+                <img src="{% static 'assets/images/icons/contact/1.png' %}" alt="Location Icon">
+              </div>
+              <h4 class="title">Location</h4>
+            </div>
+            <ul class="contact-item-list">
+              {% for location in locations %}
+              <li>{{ location.address }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="contact-item">
+            <div class="top">
+              <div class="icon">
+                <img src="{% static 'assets/images/icons/contact/2.png' %}" alt="Phone Icon">
+              </div>
+              <h4 class="title">Make a call</h4>
+            </div>
+            <ul class="contact-item-list">
+              {% for phone in phone_numbers %}
+              <li>{{ phone.number }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="contact-item">
+            <div class="top">
+              <div class="icon">
+                <img src="{% static 'assets/images/icons/contact/3.png' %}" alt="Mail Icon">
+              </div>
+              <h4 class="title">Mail</h4>
+            </div>
+            <ul class="contact-item-list">
+              {% for email in emails %}
+              <li><a href="mailto:{{ email.address }}">{{ email.address }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Info Section End -->
+  

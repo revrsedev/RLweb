@@ -1,0 +1,49 @@
+<!-- Blog Details Template -->
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Banner Start -->
+<section class="inner-page-banner" style="background-image: url('{{ post.banner_image_url }}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="inner-page-title text-white">{{ post.title }}</h2>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'radio:home' %}">Home</a></li>
+          <li><a href="{% url 'radio:blog' %}">Blog</a></li>
+          <li>{{ post.title }}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Page Banner End -->
+
+<!-- Blog Details Section Start -->
+<section class="pt-120 pb-120 section-bg">
+  <div class="container">
+    <div class="row gy-5">
+      <div class="col-xl-8">
+        <div class="blog-details-wrapper">
+          <div class="blog-details-thumb">
+            <img src="{{ post.image_url }}" alt="image">
+          </div>
+          <div class="blog-details-content">
+            <div class="blog-meta">
+              <span class="single-meta">{{ post.author }}</span>
+              <span class="single-meta">{{ post.publish_date }}</span>
+            </div>
+            <h2 class="blog-details-title">{{ post.title }}</h2>
+            {{ post.content|safe }}
+          </div>
+        </div>
+        <!-- Blog Comments and Sharing Section -->
+        {% include 'radio/blog_comments_sharing.html' %}
+      </div>
+      <!-- Sidebar Widgets -->
+      {% include 'radio/blog_sidebar_widgets.html' %}
+    </div>
+  </div>
+</section>
+<!-- Blog Details Section End -->
+{% endblock %}

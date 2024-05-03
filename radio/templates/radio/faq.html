@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}FM LAND - FAQ{% endblock %}
+
+{% block extra_css %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/remixicon.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/lightcase.css' %}">
+  <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="site-body">
+  <!-- Page Banner -->
+  <section class="inner-page-banner" style="background-image: url('{% static 'images/bg/inner-page-banner.jpg' %}');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 text-center">
+          <h2 class="inner-page-title text-white">FAQ</h2>
+          <ul class="page-breadcrumb">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li>FAQ</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="pt-120 pb-120 section-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 d-lg-block d-none">
+          <div class="faq-thumb">
+            <img src="{% static 'images/bg/faq1.jpg' %}" alt="image">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          {% include 'radio/faq_accordion.html' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Section -->
+  {% include 'radio/subscribe_section.html' %}
+</main>
+{% endblock %}

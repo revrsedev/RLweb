@@ -1,0 +1,72 @@
+{% extends 'radio/base.html' %}
+
+{% load static %}
+
+{% block title %}Show Details - FM LAND{% endblock %}
+
+{% block content %}
+<!-- Preloader and scroll to top are usually part of the base template -->
+
+<!-- Navbar is also part of the base -->
+
+<!-- Page Banner -->
+<section class="inner-page-banner" style="background-image: url('{% static 'images/bg/inner-page-banner.jpg' %}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="inner-page-title text-white">Show Details</h2>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Show Details</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Show Details Section -->
+<section class="pt-120 pb-120 section-bg">
+  <div class="container">
+    <div class="row gy-4 justify-content-between align-items-center">
+      <div class="col-lg-6">
+        <div class="show-details-thumb">
+          <img src="{% static 'images/bg/show-details.jpg' %}" alt="image">
+        </div>
+      </div>
+      <div class="col-xl-5 col-lg-6">
+        <div class="show-details-content">
+          <h2 class="section-title">“Music of Pop”</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi nullam gravida leo iaculis risus
+            feugiat.
+          </p>
+          <h4 class="show-details-time">09:10 - 10:10 PM</h4>
+
+          <div class="podcast-item-content">
+            <div class="artist-thumb">
+              <img src="{% static 'images/artist/1.jpg' %}" alt="image">
+            </div>
+            <div class="artist-content">
+              <h5 class="show-name">Music of Pop</h5>
+              <p class="artist-name">RJ Janeski</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Guest Section -->
+<section class="pb-120 section-bg">
+  <div class="container">
+    <h3 class="guest-area-title">Guests</h3>
+    <div class="row gy-4 justify-content-center">
+      <!-- Guest details can be looped here using Django templating to display each guest dynamically -->
+    </div>
+  </div>
+</section>
+
+<!-- Subscribe Section -->
+{% include 'radio/subscribe_section.html' %}
+
+{% endblock %}

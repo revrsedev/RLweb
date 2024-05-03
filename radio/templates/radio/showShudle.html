@@ -1,0 +1,47 @@
+{% extends 'radio/base.html' %}
+
+{% load static %}
+
+{% block title %}Show Schedule - FM LAND{% endblock %}
+
+{% block content %}
+<!-- Preloader and scroll to top are usually part of the base template -->
+
+<!-- Navbar is also part of the base -->
+
+<!-- Page Banner -->
+<section class="inner-page-banner" style="background-image: url('{% static 'images/bg/inner-page-banner.jpg' %}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="inner-page-title text-white">Show Schedule</h2>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'home' %}">Home</a></li>
+          <li>Shows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Podcast Section -->
+<section class="pt-120 pb-120 section-bg">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 text-center">
+        <div class="section-top">
+          <span class="top-title">Live Show</span>
+          <h2 class="section-title">Podcast Schedule</h2>
+        </div>
+      </div>
+    </div>
+    <!-- Dynamic Tab navigation and content goes here -->
+  </div>
+</section>
+
+<!-- Additional sections and their dynamic content -->
+{% include 'radio/previous_shows_section.html' %}
+{% include 'radio/upcoming_shows_section.html' %}
+{% include 'radio/subscribe_section.html' %}
+
+{% endblock %}

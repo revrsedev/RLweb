@@ -1,0 +1,39 @@
+<!-- Upcoming Shows Section -->
+<section class="pt-120 pb-120 section-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-top">
+                    <span class="top-title">Show</span>
+                    <h2 class="section-title">Upcoming show</h2>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center">
+            {% for show in upcoming_shows %}
+            <div class="col-lg-8">
+                <div class="upcoming-show">
+                    <div class="upcoming-thumb">
+                        <img src="{{ show.image_url }}" alt="image">
+                    </div>
+                    <div class="upcoming-content">
+                        <h4 class="upcoming-title">{{ show.title }}</h4>
+                        <p>{{ show.description }}</p>
+                        <div class="show-rj">
+                            <div class="show-rj-thumb">
+                                <img src="{{ show.rj.image_url }}" alt="image">
+                            </div>
+                            <div class="show-rj-content">
+                                <h4 class="show-rj-name">{{ show.rj.name }}</h4>
+                                <p>{{ show.time_range }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <p>No upcoming shows currently scheduled.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

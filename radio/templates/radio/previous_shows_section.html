@@ -1,0 +1,42 @@
+
+{% load static %}
+<!-- Previous Show Section -->
+<section class="previous-show-section pt-120 pb-120 overflow-hidden" style="background-image: url('{% static 'images/bg/previous-show.jpg' %}');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-top">
+                    <span class="top-title">Yesterday</span>
+                    <h2 class="section-title">Previous shows</h2>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="previous-show-slider">
+            {% for show in previous_shows %}
+            <div class="single-slide">
+                <div class="show-item style-two">
+                    <div class="thumb">
+                        <img src="{{ show.image_url }}" alt="image">
+                    </div>
+                    <audio controls src="{{ show.audio_url }}" class="style-two"></audio>
+                    <div class="show-item-content">
+                        <div class="show-item-top">
+                            <h5 class="show-item-top-title">{{ show.title }}</h5>
+                            <span class="show-item-duration">{{ show.duration }}</span>
+                        </div>
+                        <div class="artist-thumb">
+                            <img src="{{ show.artist_image_url }}" alt="image">
+                        </div>
+                        <div class="artist-content">
+                            <h5 class="show-name">{{ show.artist_name }}</h5>
+                            <p class="artist-name">{{ show.artist_role }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <p>No shows available at the moment.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

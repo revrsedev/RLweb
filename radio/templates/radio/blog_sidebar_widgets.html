@@ -1,0 +1,39 @@
+{% load static %}
+<!-- Sidebar Widgets for Blog -->
+<div class="widget-box">
+    <!-- Search Widget -->
+    <form class="search-form">
+        <input type="text" name="search" class="form-control" placeholder="Search...">
+        <button type="submit" class="search-form-btn"><i class="ri-search-line"></i></button>
+    </form>
+
+    <!-- Categories Widget -->
+    <h4 class="widget-box-title mt-30">Post Category</h4>
+    <ul class="cat-list">
+        <li><a href="multi-blog.html"><i class="ri-arrow-right-s-line"></i> Music </a></li>
+        <li><a href="multi-blog.html"><i class="ri-arrow-right-s-line"></i> Artist</a></li>
+        <li><a href="multi-blog.html"><i class="ri-arrow-right-s-line"></i> Podcast</a></li>
+        <li><a href="multi-blog.html"><i class="ri-arrow-right-s-line"></i> Song</a></li>
+    </ul>
+
+    <!-- Recent Posts Widget -->
+    <h4 class="widget-box-title mt-30">Latest Post</h4>
+    <div class="side-post">
+        <div class="side-post-thumb">
+            <img src="{% static 'images/blog/1.jpg' %}" alt="image">
+        </div>
+        <div class="side-post-content">
+            <h6 class="side-post-title"><a href="multi-blog-details.html">Traveling – it leaves you speechless, then turns you into a storyteller.</a></h6>
+            <p class="side-post-date"><i class="ri-alarm-line me-2"></i> 21 JUN, 2022</p>
+        </div>
+    </div><!-- side-post end -->
+
+    <!-- Social Follow Widget -->
+    <h4 class="widget-box-title mt-30">Follow Us</h4>
+    <ul class="social-links-white">
+        <li><a href="#0"><i class="ri-facebook-fill"></i></a></li>
+        <li><a href="#0"><i class="ri-linkedin-fill"></i></a></li>
+        <li><a href="#0"><i class="ri-twitter-fill"></i></a></li>
+        <li><a href="#0"><i class="ri-instagram-line"></i></a></li>
+    </ul>
+</div><!-- widget-box end -->

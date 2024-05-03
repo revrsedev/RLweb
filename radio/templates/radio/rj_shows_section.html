@@ -1,0 +1,31 @@
+{% load static %}
+<!-- RJ Shows Section -->
+<section class="pt-120 pb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="section-top">
+                    <h2 class="section-title">RJ Miron Shows</h2>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row gy-4">
+            {% for show in rj_shows %}
+            <div class="col-lg-3 col-sm-6">
+                <div class="rj-show-item link-item">
+                    <a href="{% url 'show_detail' show.id %}" class="full-link"></a>
+                    <div class="rj-show-thumb">
+                        <img src="{{ show.image_url }}" alt="image">
+                    </div>
+                    <div class="rj-show-content">
+                        <h4 class="title">{{ show.title }}</h4>
+                        <p class="rj-show-duration">{{ show.start_time }} - {{ show.end_time }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+                <p>No shows currently available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

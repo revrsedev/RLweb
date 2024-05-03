@@ -1,0 +1,30 @@
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Page Banner -->
+
+<!-- About Section -->
+<section class="pt-120 pb-120 section-bg">
+  <div class="container">
+    <div class="row gy-4 align-items-center">
+      <div class="col-lg-6">
+        <img src="{% static 'images/about/left-img.jpg' %}" alt="asdasds" class="img-fluid">
+      </div>
+      <div class="col-lg-6">
+        <h2 class="section-title">Best Music FM Your Listening</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.</p>
+        <a href="{% url 'radio:about' %}" class="btn btn-main">See More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Podcast Section -->
+{% include 'radio/podcast_section.html' %}
+
+<!-- Subscribe Section -->
+{% include 'radio/subscribe_section.html' %}
+
+{% endblock %}

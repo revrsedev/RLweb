@@ -1,0 +1,51 @@
+{% load static %}
+
+<!-- Podcast Section -->
+<section class="dark-overlay pt-120 pb-120" style="background-image: url('{% static 'images/bg/podcast.jpg' %}');">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-top">
+            <span class="top-title">Live Show</span>
+            <h2 class="section-title">Our Podcast</h2>
+          </div>
+        </div>
+      </div><!-- row end -->
+  
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <div class="podcard-show-item">
+            <div class="icon">
+              <img src="{% static 'images/icons/podcast/1.png' %}" alt="Live Shows">
+            </div>
+            <h5 class="podcard-show-title">Live Shows</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin purus pellentesque.</p>
+            <a href="{% url 'radio:live_shows' %}" class="podcard-show-link">Explore More</a>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="podcard-show-item">
+            <div class="icon">
+              <img src="{% static 'images/icons/podcast/2.png' %}" alt="Previous Shows">
+            </div>
+            <h5 class="podcard-show-title">Previous Shows</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin purus pellentesque.</p>
+            <a href="{% url 'radio:previous_shows' %}" class="podcard-show-link">Explore More</a>
+          </div>
+        </div>
+  
+        <div class="col-lg-4">
+          <div class="podcard-show-item">
+            <div class="icon">
+              <img src="{% static 'images/icons/podcast/3.png' %}" alt="Upcoming Shows">
+            </div>
+            <h5 class="podcard-show-title">Upcoming Shows</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin purus pellentesque.</p>
+            <a href="{% url 'radio:upcoming_shows' %}" class="podcard-show-link">Explore More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

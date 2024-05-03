@@ -1,0 +1,49 @@
+{% load static %}
+<!-- footer.html -->
+<footer class="footer-section">
+    <div class="container">
+      <div class="row align-items-end">
+        <div class="col-xxl-4 col-xl-5 col-lg-4 text-lg-start text-center">
+          <a href="{% url 'radio:home' %}" class="footer-logo">
+            <img src="{% static 'images/logo.png' %}" alt="image">
+          </a>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit nibh aenean eu, mattis egestas ut et.</p>
+        </div>
+        <div class="col-xxl-8 col-xl-7 col-lg-8">
+          <nav class="footer-nav">
+            <ul class="footer-menu">
+              <li><a href="{% url 'radio:home' %}">Home</a></li>
+              <li><a href="{% url 'radio:about' %}">About Us</a></li>
+              <li><a href="{% url 'radio:schedule' %}">Show Schedule</a></li>
+              <li><a href="{% url 'radio:blog' %}">Blog</a></li>
+              <li><a href="{% url 'radio:sponsor' %}">Sponsors</a></li>
+              <li><a href="{% url 'radio:contact' %}">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <hr>
+      <div class="row gy-2 align-items-center">
+        <div class="col-md-6 text-md-start text-center">
+          <p>© 2023 FMland. All rights reserved</p>
+        </div>
+        <div class="col-md-6">
+          <ul class="social-links">
+            <li>
+              <a href="#0"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i class="fab fa-linkedin-in"></i></a>
+            </li>
+            <li>
+              <a href="#0"><i the "fab fa-twitter"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  

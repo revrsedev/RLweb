@@ -1,0 +1,68 @@
+{% load static %}
+<!-- header.html -->
+<header>
+    <nav class="navbar main-navbar navbar-expand-xl">
+      <div class="container">
+        <a class="navbar-brand" href="{% url 'radio:home' %}">
+          <img src="{% static 'images/logo.png' %}" alt="site logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav site-menu m-auto mb-2 mb-lg-0">
+            <li class="menu-item menu-item-has-children">
+              <a href="{% url 'radio:home' %}">Home</a>
+              <ul class="sub-menu">
+                <li class="menu-item">
+                  <a href="{% url 'radio:home' %}">Home One</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:home' %}">Home Two</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:home' %}">Home Three</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="{% url 'radio:about' %}">Sobre Nosotros</a>
+            </li>
+            <li class="menu-item">
+              <a href="{% url 'radio:schedule' %}">Horarios</a>
+            </li>
+            <li class="menu-item">
+              <a href="{% url 'radio:blog' %}">Blog</a>
+            </li>
+            <li class="menu-item menu-item-has-children">
+              <a href="#0">Pages</a>
+              <ul class="sub-menu">
+                <li class="menu-item">
+                  <a href="{% url 'radio:show_details' %}">Detalles de las emisiones</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:radio_jockey' %}">Detalles de</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:jockey_details' %}">DJ's de la radio</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:faq' %}">FAQ</a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'radio:sponsor' %}">Sponsor</a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="{% url 'radio:contact' %}">Contact</a>
+            </li>
+          </ul>
+  
+          <a href="{% url 'radio:sponsor' %}" class="btn btn-main mt-xl-0 mt-3">Sponsor</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+  

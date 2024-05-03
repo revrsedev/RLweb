@@ -1,0 +1,40 @@
+{% load static %}
+<!-- RJ Section -->
+<section class="pt-120 pb-120 section-bg">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-top">
+            <span class="top-title">RJ</span>
+            <h2 class="section-title">Our Expert RJ</h2>
+          </div>
+        </div>
+      </div><!-- Row end -->
+  
+      <!-- Radio Jockey Slider -->
+      <div class="rj-slider">
+        <!-- Slide Items -->
+        {% for rj in radio_jockeys %}
+        <div class="rj-item style-two">
+          <div class="thumb">
+            <img src="{{ rj.image_url }}" alt="RJ {{ rj.name }}">
+          </div>
+          <div class="content">
+            <h4 class="rj-name">
+              <a href="{{ rj.detail_url }}">RJ {{ rj.name }}</a>
+            </h4>
+            <p class="rj-designation">{{ rj.designation }}</p>
+            <ul class="rj-social-links">
+              {% for social in rj.social_media %}
+              <li>
+                <a href="{{ social.link }}"><i class="fab fa-{{ social.platform }}"></i></a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        {% endfor %}
+      </div><!-- RJ Slider end -->
+    </div>
+  </section>
+  

@@ -1,0 +1,37 @@
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Page Banner -->
+<section class="inner-page-banner" style="background-image: url('{% static 'images/bg/inner-page-banner.jpg' %}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h2 class="inner-page-title text-white">Contacto</h2>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'radio:home' %}">Home</a></li>
+          <li>Contacto</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<main class="site-body">
+  {% include 'radio/contact_info_section.html' %}
+  {% include 'radio/contact_form_section.html' %}
+  {% include 'radio/subscribe_section.html' %}
+</main>
+
+{% include 'radio/footer.html' %}
+
+<!-- Script tags -->
+<script src="{% static 'js/lib/jquery-3.6.0.min.js' %}"></script>
+<script src="{% static 'js/lib/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/lib/maudio.js' %}"></script>
+<script src="{% static 'js/lib/slick.min.js' %}"></script>
+<script src="{% static 'js/lib/wow.min.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+{% endblock %}

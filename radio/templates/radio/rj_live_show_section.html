@@ -1,0 +1,31 @@
+{% load static %}
+<!-- RJ Live Show Section -->
+<section class="pt-120 pb-120 section-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="section-top">
+                    <span class="top-title">Live Show</span>
+                    <h2 class="section-title">Music Shows</h2>
+                </div>
+            </div>
+        </div><!-- row end -->
+        <div class="row justify-content-center">
+            {% for show in live_shows %}
+            <div class="col-lg-8">
+                <div class="rj-live-show single-audio-player style-two style-sm">
+                    <span class="live-status">{{ show.status }}</span>
+                    <div class="rj-live-show-thumb">
+                        <img src="{{ show.image_url }}" alt="image">
+                    </div>
+                    <div class="single-audio-content">
+                        <audio controls src="{{ show.audio_url }}" class="style-two"></audio>
+                    </div>
+                </div><!-- single-audio-player end -->
+            </div>
+            {% empty %}
+                <p>No live shows are currently available.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>

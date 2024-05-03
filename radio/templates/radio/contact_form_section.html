@@ -1,0 +1,49 @@
+{% load static %}
+<!-- Contact Form Section Start -->
+<section class="pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-top">
+            <span class="top-title">Contact</span>
+            <h2 class="section-title">Write A Comments</h2>
+          </div>
+        </div>
+      </div><!-- Row end -->
+      <div class="row gy-5">
+        <div class="col-lg-6">
+          <form class="row gy-4 contact-form" method="post" action="{% url 'radio:contact' %}">
+            {% csrf_token %}
+            <div class="col-md-6">
+              <input type="text" id="name" name="name" class="form-control" placeholder="Name" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="col-md-6">
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Phone">
+            </div>
+            <div class="col-md-6">
+              <input type="text" id="company" name="company" class="form-control" placeholder="Company">
+            </div>
+            <div class="col-lg-12">
+              <textarea id="message" name="message" cols="30" rows="10" class="form-control textarea-md"
+                placeholder="Write a comments" required></textarea>
+            </div>
+            <div class="col-lg-12 text-center mt-lg-5 mt-4">
+              <button type="submit" class="btn btn-main">Submit</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <div class="contact-map">
+            <!-- Include your Google Maps iframe here -->
+            <iframe src="your_google_maps_link_here"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Contact Form Section End -->
+  

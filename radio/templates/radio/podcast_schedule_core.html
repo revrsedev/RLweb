@@ -1,0 +1,60 @@
+{% load static %}
+<!-- Podcast Section Start -->
+{% block content %}
+<section class="pt-120 pb-120">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <div class="section-top">
+            <span class="top-title">Emision en Vivo</span>
+            <h2 class="section-title">Horarios</h2>
+          </div>
+        </div>
+      </div>
+  
+      <ul class="nav nav-tabs show-tabs" id="myTab" role="tablist">
+        {% for day, podcasts in podcasts_by_day.items %}
+        <li class="nav-item" role="presentation">
+          <button class="nav-link {% if forloop.first %}active{% endif %}" id="day{{ forloop.counter }}-tab" data-bs-toggle="tab" data-bs-target="#day{{ forloop.counter }}-tab-pane" type="button" role="tab" aria-controls="day{{ forloop.counter }}-tab-pane" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">{{ day }}</button>
+        </li>
+        {% endfor %}
+      </ul>
+  
+      <div class="tab-content show-tab-content" id="myTabContent">
+        {% for day, podcasts in podcasts_by_day.items %}
+        <div class="tab-pane fade {% if forloop.first %}show active{% endif %}" id="day{{ forloop.counter }}-tab-pane" role="tabpanel" aria-labelledby="day{{ forloop.counter }}-tab" tabindex="0">
+          <div class="podcast-slider">
+            {% for podcast in podcasts %}
+            <div class="single-slide">
+              <div class="podcast-item link-item">
+                <a href="show-details.html" class="full-link"></a>
+                <div class="podcast-item-thumb">
+                  <img src="{{ podcast.image.url }}" alt="image">
+                  <div class="thumb-content">
+                    <p>{{ podcast.start_time|date:"h:i A" }}</p>
+                    <p>a</p>
+                    <p>{{ podcast.end_time|date:"h:i A" }}</p>
+                  </div>
+                </div>
+                <div class="podcast-item-content">
+                  <div class="artist-thumb">
+                    <img src="{{ podcast.artist_image.url }}" alt="image">
+                  </div>
+                  <div class="artist-content">
+                    <h5 class="show-name">{{ podcast.title }}</h5>
+                    <p class="artist-name">{{ podcast.poster.get_full_name|default:podcast.poster.username }}</p>
+                  </div>
+                </div>
+              </div><!-- podcast-item end -->
+            </div>
+            {% empty %}
+              <p>No hay emision para el {{ day }}.</p>
+            {% endfor %}
+          </div><!-- podcast-slider end -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- Podcast Section End -->
+  {% endblock %}
