@@ -57,3 +57,15 @@ class BlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+    @property
+    def image_url(self):
+        if self.image:
+            return self.image.url
+        return ''  # Default if no image is present
+
+    @property
+    def banner_image_url(self):
+        # If you want to use the same image for the banner as well, or define another field
+        return self.image_url
+    

@@ -15,22 +15,21 @@ admin.site.register(LiveShow, LiveShowAdmin)
 @admin.register(RadioSettings)
 class RadioSettingsAdmin(admin.ModelAdmin):
     list_display = ['stream_url']
-    actions = None  # Disable all admin actions like delete
+    actions = None 
 
     def has_add_permission(self, request):
-        # Disable add if settings already exist
         return not RadioSettings.objects.exists()
-
+    
     def has_change_permission(self, request, obj=None):
-        # Allow if no object has been created
+        
         return not RadioSettings.objects.exists() or obj is not None
 
     def has_delete_permission(self, request, obj=None):
-        # Disable delete permission
+       
         return False
 
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'publish_date', 'image_display')  # Include image display method
+    list_display = ('title', 'author', 'publish_date', 'image_display') 
     list_filter = ('publish_date', 'author')
     search_fields = ('title', 'content')
 

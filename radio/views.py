@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.templatetags.static import static
-from .models import Podcast, RadioSettings, LiveShow, BlogPost as Blog
-from django.shortcuts import render, get_object_or_404
+from .models import Podcast, RadioSettings, LiveShow, BlogPost
+from django.shortcuts import render, get_object_or_404, render
 
 
 def home(request):
@@ -45,15 +44,12 @@ def schedule(request):
     return render(request, 'radio/showShudle.html')
 
 def blog(request):
-    posts = Blog.objects.all()  # This should reference Blog if it's the model you intend to use
+    posts = BlogPost.objects.all()
     return render(request, 'radio/blog_section.html', {'posts': posts})
 
-def blog_details(request, blog_id):
-    post = get_object_or_404(Blog, id=blog_id)  # Again, make sure Blog is the correct model
-    return render(request, 'radio/blog_details.html', {'post': post})
-
-def blog_details(request):
-    return render(request, 'radio/blog_details.html')
+def blog_details(request, post_id):
+    post = get_object_or_404(BlogPost, pk=post_id)
+    return render(request, 'radio/blog_details_section.html', {'post': post})
 
 def show_details(request):
     return render(request, 'radio/showDetails.html')
