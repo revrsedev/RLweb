@@ -1,0 +1,28 @@
+{% extends 'radio/base.html' %}
+{% load static %}
+
+{% block content %}
+  <!-- Category Banner -->
+  <section class="category-banner" style="background-image: url('{% static 'images/bg/category-banner.jpg' %}');">
+    <div class="container">
+      <h1>{{ category.name }}</h1>
+    </div>
+  </section>
+
+  <!-- Category Details -->
+  <section class="category-details">
+    <div class="container">
+      <h2>Posts in {{ category.name }}</h2>
+      <div class="posts">
+        {% for post in category.posts.all %}
+          <div class="post">
+            <h3><a href="{% url 'radio:blog_details' post.id %}">{{ post.title }}</a></h3>
+            <p>{{ post.summary }}</p>
+          </div>
+        {% empty %}
+          <p>No posts available in this category.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock %}

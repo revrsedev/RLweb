@@ -68,3 +68,37 @@ class BlogPost(models.Model):
     def banner_image_url(self):
         # If you want to use the same image for the banner as well, or define another field
         return self.image_url
+    
+class Comment(models.Model):
+    post = models.ForeignKey('BlogPost', related_name='comments', on_delete=models.CASCADE)  # Assuming BlogPost is your blog post model
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    body = models.TextField()
+    created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Comment by {self.name} on {self.post}"
+    
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField()
+
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="posts")
+    image = models.ImageField(upload_to='posts/')
+    content = models.TextField()
+    published_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+    
+class Tag(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+    slug = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
