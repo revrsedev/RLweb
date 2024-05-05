@@ -154,9 +154,17 @@
               <li><a href="#"><i class="ri-instagram-line"></i></a></li>
               </ul>
             </div>
+             <!-- DJ/Author Widget -->
+          <div class="widget-box">
+            <h4 class="widget-box-title">About the DJ/Author</h4>
+            <div class="author-widget-content">
+                <img src="{% static 'images/dj/author.jpg' %}" alt="DJ Image" class="author-widget-thumb">
+                <h5>{{ post.author.username }}</h5>
+                <p>{{ post.author.profile.bio }}</p>  <!-- Assuming 'profile' is a related model to User with a 'bio' field -->
+            </div>
+        </div>
           </div>
         </div>
       </section>
     </main>
-  
   {% endblock %}

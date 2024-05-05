@@ -48,29 +48,31 @@ def blog(request):
 
 def blog_details(request, post_id):
     post = get_object_or_404(BlogPost, pk=post_id)
-    comments = post.comments.all()
-    categories = Category.objects.all()
-    tags = Tag.objects.all()
-    form = CommentForm()
+    comments = post.comments.all()  # Retrieves all comments related to the post
+    categories = Category.objects.all()  # Retrieves all categories
+    tags = Tag.objects.all()  # Retrieves all tags
+    form = CommentForm()  # Instantiates a new comment form
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             new_comment = form.save(commit=False)
-            new_comment.post = post
+            new_comment.post = post  # Associate the comment with the post
             new_comment.save()
-            return redirect('radio:blog_details', post_id=post.id)
+            return redirect('radio:blog_details', post_id=post.id)  # Redirect to the same page to display the new comment
         else:
-            # Log form errors or handle them appropriately
-            print(form.errors)
+            print(form.errors)  # Log form errors, consider handling these in your template
 
-    return render(request, 'radio/blog_details_section.html', {
+    # Context dictionary to pass data to the template
+    context = {
         'post': post,
         'comments': comments,
         'categories': categories,
         'tags': tags,
         'form': form
-    })
+    }
+    return render(request, 'radio/blog_details_section.html', context)
+
 
 def post_comment(request, post_id):
     post = get_object_or_404(BlogPost, pk=post_id)
