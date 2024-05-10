@@ -1,0 +1,58 @@
+<!-- jockey-details.html -->
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="site-body">
+    <!-- page banner start -->
+    <section class="inner-page-banner" style="background-image: url('{% static 'images/bg/inner-page-banner.jpg' %}');">
+        <!-- existing HTML content -->
+    </section>
+    <!-- rj details section start -->
+    <section class="pt-120 pb-120 section-bg">
+        <div class="container">
+            <div class="row gy-4 justify-content-between">
+                <div class="col-lg-4">
+                    <div class="rj-details-thumb">
+                        <img src="{{ dj.image.url }}" alt="image">
+                    </div>
+                    <div class="rj-details-box mt-30 text-center">
+                        <h4>{{ dj.name }}</h4>
+                        <p class="rj-details-designation">{{ dj.title }}</p>
+                        <!-- Social links can be added here if needed -->
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-8">
+                    <div class="rj-details-box">
+                        <div class="rj-details-contact">
+                            <div class="left">
+                                <h5 class="title">Contact Info</h5>
+                                <ul class="rj-details-contact-list">
+                                    <li><i class="fas fa-map-marker-alt"></i>
+                                        <p>Location: <span>{{ dj.location }}</span></p>
+                                    </li>
+                                    <li><i class="fas fa-mobile-alt"></i>
+                                        <p>Phone Number: <span>{{ dj.phone_number }}</span></p>
+                                    </li>
+                                    <li><i class="far fa-envelope"></i>
+                                        <p>Email: <span>{{ dj.email }}</span></p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="right">
+                                <img src="{% static 'images/logo.png' %}" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rj-details-box">
+                        <h5 class="title">Biography</h5>
+                        <p>{{ dj.biography }}</p>
+                    </div>
+                    <!-- Experience can be added dynamically here if structured appropriately in the model -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Other sections remain unchanged unless they need to be dynamic -->
+</main>
+{% endblock %}

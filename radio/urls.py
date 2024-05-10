@@ -1,10 +1,10 @@
 from django.urls import path
-from .views import home, about, schedule, blog, show_details, radio_jockey, jockey_details, faq, sponsor, contact, live_shows, previous_shows, upcoming_shows, subscribe, podcast_schedule, category_detail
+from .views import home, about, schedule, blog, show_details, faq, sponsor, contact, live_shows, previous_shows, upcoming_shows, subscribe, podcast_schedule, category_detail, dj_detail, radio_jockey
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
 
-app = 'radio'
+app_name = 'radio'
 
 urlpatterns = [
     path('', home, name='home'),
@@ -13,9 +13,10 @@ urlpatterns = [
     path('blog/', blog, name='blog'),
     path('blog/<int:post_id>/', views.blog_details, name='blog_details'),
     path('blog/<int:post_id>/comment/', views.post_comment, name='post_comment'),
+    path('category/<slug:category_slug>/', views.category_detail, name='category_detail'),
     path('show_details/', show_details, name='show_details'),
-    path('radio_jockey/', radio_jockey, name='radio_jockey'),
-    path('jockey_details/', jockey_details, name='jockey_details'),
+    path('dj/<int:dj_id>/', dj_detail, name='dj-detail'),
+    path('radio-jockey/', radio_jockey, name='radio-jockey'),
     path('faq/', faq, name='faq'),
     path('sponsor/', sponsor, name='sponsor'),
     path('contact/', contact, name='contact'),

@@ -97,7 +97,7 @@
   </div>
 </section>
 
-<!-- RJ Section -->
+<!-- rj section start -->
 <section class="pt-120 pb-120">
   <div class="container">
     <div class="row justify-content-center">
@@ -109,13 +109,51 @@
       </div>
     </div><!-- row end -->
     <div class="row gy-4 justify-content-center">
-      <!-- RJ content -->
-    </div>
+      {% for dj in djs %}
+      <div class="col-lg-3 col-sm-6">
+        <div class="rj-item">
+          <div class="thumb">
+            <img src="{{ dj.image.url }}" alt="image" onerror="this.onerror=null; this.src='assets/images/rj/default.jpg'">
+          </div>
+          <div class="content">
+            <h4 class="rj-name"><a href="{% url 'radio:dj-detail' dj_id=dj.id %}">{{ dj.name }}</a></h4>
+            <ul class="rj-social-links">
+              <!-- Assuming social links are stored in the DJ model -->
+              {% if dj.facebook_url %}
+              <li>
+                <a href="{{ dj.facebook_url }}"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              {% endif %}
+              {% if dj.instagram_url %}
+              <li>
+                <a href="{{ dj.instagram_url }}"><i class="fab fa-instagram"></i></a>
+              </li>
+              {% endif %}
+              {% if dj.linkedin_url %}
+              <li>
+                <a href="{{ dj.linkedin_url }}"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+              {% endif %}
+              {% if dj.twitter_url %}
+              <li>
+                <a href="{{ dj.twitter_url }}"><i class="fab fa-twitter"></i></a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div><!-- rj-item end -->
+      </div>
+      {% empty %}
+      <p>No DJs found.</p>
+      {% endfor %}
+    </div><!-- row end -->
+
     <div class="text-center mt-50">
-      <a href="radio-jockey.html" class="btn btn-main">Explore More</a>
+      <a href="#" class="btn btn-main">Explore More</a>
     </div>
   </div>
 </section>
+<!-- rj section end -->
 
 <!-- Additional sections can be continued in a similar pattern -->
 

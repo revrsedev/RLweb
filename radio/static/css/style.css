@@ -6355,4 +6355,8 @@ blockquote::after {
     top: 75px;
     left: 28%;
 }
+
+.category-name {
+    color: rgb(28, 229, 243);
+}
 /*# sourceMappingURL=style.css.map */

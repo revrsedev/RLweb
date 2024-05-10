@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.views.generic.edit import CreateView
 from django.conf import settings
 
+
 class Podcast(models.Model):
     title = models.CharField(max_length=200)
     image = models.ImageField(upload_to='podcasts/images/')
@@ -48,9 +49,17 @@ class RadioSettings(models.Model):
     def __str__(self):
         return "Radio Settings"
     
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+    
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="blog_posts", null=True)
     image = models.ImageField(upload_to='blog_images/')
     content = models.TextField()
     publish_date = models.DateTimeField(auto_now_add=True)
@@ -78,16 +87,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.name} on {self.post}"
-    
-class Category(models.Model):
-    name = models.CharField(max_length=100)
-    slug = models.SlugField()
-
-    def __str__(self):
-        return self.name
 
 class Post(models.Model):
     title = models.CharField(max_length=200)
+    categories = Category.objects.all()
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="posts")
     image = models.ImageField(upload_to='posts/')
     content = models.TextField()
@@ -102,3 +105,20 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.name
+    
+class DJ(models.Model):
+    name = models.CharField(max_length=100)
+    title = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='dj_photos/')
+    biography = models.TextField()
+    experience = models.TextField()
+    location = models.CharField(max_length=100)
+    phone_number = models.CharField(max_length=20)
+    email = models.EmailField()
+    facebook_url = models.CharField(max_length=200, unique=True, null=True)
+    instagram_url = models.CharField(max_length=200, unique=True, null=True)
+    linkedin_url = models.CharField(max_length=200, unique=True, null=True)
+    twitter_url = models.CharField(max_length=200, unique=True, null=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.title}"

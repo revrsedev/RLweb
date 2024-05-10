@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Podcast, LiveShow, RadioSettings, BlogPost
+from .models import Podcast, LiveShow, RadioSettings, BlogPost, Category, DJ
 from django.utils.html import format_html
 
 
@@ -29,9 +29,9 @@ class RadioSettingsAdmin(admin.ModelAdmin):
         return False
 
 class BlogPostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'publish_date', 'image_display') 
-    list_filter = ('publish_date', 'author')
-    search_fields = ('title', 'content')
+    list_display = ('title', 'author', 'category', 'publish_date')  # Display category in list
+    list_filter = ('category', 'publish_date')  # Filter by category and publish date
+    search_fields = ('title', 'content', 'category__name')  # Search by title, content, and category name
 
     def image_display(self, obj):
         """image thumbnails"""
@@ -41,3 +41,5 @@ class BlogPostAdmin(admin.ModelAdmin):
     image_display.short_description = 'Image Preview'
 
 admin.site.register(BlogPost, BlogPostAdmin)
+admin.site.register(Category)
+admin.site.register(DJ)
