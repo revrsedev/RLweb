@@ -90,5 +90,3 @@ db.sqlite3
 settings.py
 venv
 env
-static/
-media/
