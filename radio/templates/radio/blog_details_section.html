@@ -8,10 +8,10 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center">
-          <h2 class="inner-page-title text-white">Blog Details</h2>
+          <h2 class="inner-page-title text-white">Nuestro Blog</h2>
           <ul class="page-breadcrumb">
-            <li><a href="{% url 'radio:home' %}">Home</a></li>
-            <li>Blog Details</li>
+            <li><a href="{% url 'radio:home' %}">Inicio</a></li>
+            <li>Detalles de este blog</li>
           </ul>
         </div>
       </div>
@@ -57,7 +57,7 @@
 
           <!-- Comments Section -->
           <div class="comment-area">
-            <h4 class="mb-30">Comments:</h4>
+            <h4 class="mb-30">Comentarios:</h4>
             <div class="comment-list">
               <!-- Example Comment -->
               <div class="single-comment">
@@ -66,8 +66,8 @@
                     <img src="{% static 'images/blog/comment1.jpg' %}" alt="image">
                   </div>
                   <div class="single-comment-content">
-                    <p class="fs[16px] text-white"><span class="fs[18px] fw-500 me-3">Thomas</span> 19 jun 2022</p>
-                    <p class="mt-3">A mi gravida diam libero. In turpis arcu tempus magna leo ipsum tortor sed viverra. Leo, egestas eget leo nec.</p>
+                    <p class="fs[16px] text-white"><span class="fs[18px] fw-500 me-3">Jony</span> 1 jul 2024</p>
+                    <p class="mt-3">La mejor RADIO ONLINE de todos los tiempos!!</p>
                     <a href="#0" class="text-base fs[16px] mt-4">Reply</a>
                   </div>
                 </div>
@@ -77,7 +77,7 @@
 
           <!-- Comment Form -->
           <div class="comment-form-area">
-            <h4 class="mb-30">Post A Comment:</h4>
+            <h4 class="mb-30">Comenta:</h4>
             <form>
               <div class="row gy-4">
                 <div class="col-lg-6">
@@ -90,7 +90,7 @@
                   <textarea name="comment" class="form-control" placeholder="Write a comment"></textarea>
                 </div>
                 <div class="col-lg-12 text-center">
-                  <button type="submit" class="btn btn-main mt-4">Submit</button>
+                  <button type="submit" class="btn btn-main mt-4">Enviar</button>
                 </div>
               </div>
             </form>
@@ -109,25 +109,25 @@
 
           <!-- Category Widget -->
           <div class="widget-box">
-            <h4 class="widget-box-title mt-30">Post Category</h4>
+            <h4 class="widget-box-title mt-30">Categorías</h4>
             <ul class="cat-list">
-              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Music </a></li>
-              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Artist</a></li>
-              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Podcast</a></li>
-              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Song</a></li>
+              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Música </a></li>
+              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Artistas</a></li>
+              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Podcasts</a></li>
+              <li><a href="#"><i class="ri-arrow-right-s-line"></i> Temas</a></li>
             </ul>
           </div>
 
           <!-- Latest Post Widget -->
           <div class="widget-box">
-            <h4 class="widget-box-title">Latest Post</h4>
+            <h4 class="widget-box-title">Últimos blogs</h4>
             <div class="side-post">
               <div class="side-post-thumb">
                 <img src="{% static 'images/blog/1.jpg' %}" alt="image">
               </div>
               <div class="side-post-content">
-                <h6 class="side-post-title"><a href="#">Myself in the world of travel where anything is possible.</a></h6>
-                <p class="side-post-date"><i class="ri-alarm-line me-2"></i> 21 JUN, 2022</p>
+                <h6 class="side-post-title"><a href="#">Matojitos lo mejor de lo mejor.</a></h6>
+                <p class="side-post-date"><i class="ri-alarm-line me-2"></i> 21 JUL, 2024</p>
               </div>
             </div>
           </div>
@@ -136,18 +136,18 @@
           <div class="widget-box">
             <h4 class="widget-box-title">Tag</h4>
             <ul class="tag-list">
-              <li><a href="#">Music</a></li>
+              <li><a href="#">Musica</a></li>
               <li><a href="#">Podcast</a></li>
-              <li><a href="#">Live show</a></li>
-              <li><a href="#">Artist</a></li>
+              <li><a href="#">Shows en Vivo</a></li>
+              <li><a href="#">Artistas</a></li>
               <li><a href="#">Radio</a></li>
-              <li><a href="#">RJ</a></li>
+              <li><a href="#">DJ's</a></li>
             </ul>
           </div>
 
           <!-- Follow Us Widget -->
           <div class="widget-box">
-            <h4 class="widget-box-title">Follow Us</h4>
+            <h4 class="widget-box-title">Síguenos</h4>
             <ul class="social-links-white">
               <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
               <li><a href="#"><i class="ri-linkedin-fill"></i></a></li>
@@ -157,7 +157,7 @@
             </div>
              <!-- DJ/Author Widget -->
           <div class="widget-box">
-            <h4 class="widget-box-title">About the DJ/Author</h4>
+            <h4 class="widget-box-title">Sobre el DJ/Autor</h4>
             <div class="author-widget-content">
                 <img src="{% static 'images/dj/author.jpg' %}" alt="DJ Image" class="author-widget-thumb">
                 <h5>{{ post.author.username }}</h5>

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, about, schedule, blog, show_details, faq, sponsor, contact, live_shows, previous_shows, upcoming_shows, subscribe, podcast_schedule, category_detail, dj_detail, radio_jockey
+from .views import home, about, schedule, blog, show_details, faq, sponsor, contact, live_shows, previous_shows, upcoming_shows, subscribe, podcast_schedule, category_detail, dj_detail, radio_jockey, webchat
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
@@ -25,4 +25,5 @@ urlpatterns = [
     path('upcoming_shows/', upcoming_shows, name='upcoming_shows'),
     path('subscribe/', subscribe, name='subscribe'),
     path('podcast_schedule/', podcast_schedule, name='podcast_schedule'),
+    path('webchat/', webchat, name='webchat'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

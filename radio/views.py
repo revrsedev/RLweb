@@ -5,7 +5,7 @@ from .forms import CommentForm
 
 
 def home(request):
-    days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    days = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     podcasts_by_day = {day: Podcast.objects.filter(day_of_week=days.index(day)) for day in days}
     live_show = LiveShow.objects.filter(live_status=True).first()
     radio_settings = RadioSettings.objects.first()
@@ -14,7 +14,7 @@ def home(request):
     if not live_show:
         live_show = {
             'title': 'Auto DJ',
-            'dj_name': 'Automated Stream',
+            'dj_name': 'aUtORadioMatojitoDj',
             'start_time': '00:00',
             'end_time': '23:59',
             'live_status': True,
@@ -128,3 +128,7 @@ def podcast_schedule(request):
     days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     podcasts_by_day = {day: Podcast.objects.filter(day_of_week=days.index(day)) for day in days}
     return render(request, 'radio/podcast_schedule.html', {'podcasts_by_day': podcasts_by_day})
+
+def webchat(request):
+    djs = DJ.objects.all()  # Retrieve all DJ entries from the database
+    return render(request, 'radio/webchat.html')

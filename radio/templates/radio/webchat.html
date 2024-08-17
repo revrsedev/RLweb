@@ -1,0 +1,26 @@
+{% extends 'radio/base.html' %}
+{% load static %}
+{% block content %}
+<script type="text/JavaScript">
+    var dispositivo = navigator.userAgent.toLowerCase();
+    if( dispositivo.search(/iphone|ipod|ipad|android/) > -1 ){
+    document.location = "https://kiwi.matojeando.com/index.html?nick=Matojero-n?&show_password=true&channels=#matojeando"; }
+</script>
+<div class="wrapper" id="full-width-page-wrapper">
+	<div class="container" id="content">
+		<div class="row">
+			<div class="col-md-12 content-area" id="primary">
+				<main class="site-main" id="main" role="main">
+
+                    <br><br><br><br><br>
+
+					<!-- Webchat code -->
+					<iframe src="https://kiwi.matojeando.com/index.html?nick=Matojero&show_password=true&channels=#matojeando" width="100%" height="600" border="0"></iframe>
+					<!-- /Webchat code 
+					https://web.redlatina.chat/index.html?nick=testing&show_password=true&channels=#chat-->
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div><!-- .row end -->
+	</div><!-- Container end -->
+</div><!-- Wrapper end -->
+{% endblock %}

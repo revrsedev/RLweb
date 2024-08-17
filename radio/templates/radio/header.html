@@ -13,18 +13,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav site-menu m-auto mb-2 mb-lg-0">
             <li class="menu-item menu-item-has-children">
-              <a href="{% url 'radio:home' %}">Home</a>
-              <ul class="sub-menu">
-                <li class="menu-item">
-                  <a href="{% url 'radio:home' %}">Home One</a>
-                </li>
-                <li class="menu-item">
-                  <a href="{% url 'radio:home' %}">Home Two</a>
-                </li>
-                <li class="menu-item">
-                  <a href="{% url 'radio:home' %}">Home Three</a>
-                </li>
-              </ul>
+              <a href="{% url 'radio:home' %}">Inicio</a>
             </li>
             <li class="menu-item">
               <a href="{% url 'radio:about' %}">Sobre Nosotros</a>
@@ -35,26 +24,23 @@
             <li class="menu-item">
               <a href="{% url 'radio:blog' %}">Blog</a>
             </li>
-            <li class="menu-item menu-item-has-children">
+            <!--<li class="menu-item menu-item-has-children">
               <a href="#0">Pages</a>
               <ul class="sub-menu">
                 <li class="menu-item">
                   <a href="{% url 'radio:show_details' %}">Detalles de las emisiones</a>
-                </li>
-                <li class="menu-item">
+                </li>-->
+               <!-- <li class="menu-item">
                   <a href="{% url 'radio:faq' %}">FAQ</a>
                 </li>
-                <li class="menu-item">
+              <li class="menu-item">
                   <a href="{% url 'radio:sponsor' %}">Sponsor</a>
-                </li>
+                </li>-->
               </ul>
-            </li>
-            <li class="menu-item">
-              <a href="{% url 'radio:contact' %}">Contact</a>
             </li>
           </ul>
   
-          <a href="{% url 'radio:sponsor' %}" class="btn btn-main mt-xl-0 mt-3">Sponsor</a>
+          <a href="{% url 'radio:webchat' %} " target="_blank" class="btn btn-main mt-xl-0 mt-3">Chatear: #matojeando</a>
         </div>
       </div>
     </nav>

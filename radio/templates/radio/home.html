@@ -1,6 +1,6 @@
 {% extends 'radio/base.html' %}
 {% load static %}
-{% block title %}Inicio - Radio Matojito{% endblock %}
+{% block title %}Inicio - Radio Matojitos{% endblock %}
 
 {% block content %}
 <!-- Banner Section -->
@@ -61,12 +61,8 @@
   </div>
 </section>
 {% else %}
-<p>No live shows currently.</p>
+<p>En estos momentos no hay show's en vivo.</p>
 {% endif %}
-
-
-
-
 
  
   {% include 'radio/podcast_schedule_core.html' %}
@@ -86,8 +82,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
         <div class="section-top">
-          <span class="top-title">Yesterday</span>
-          <h2 class="section-title">Previous shows </h2>
+          <span class="top-title">Ayer</span>
+          <h2 class="section-title">Show's pasados..</h2>
         </div>
       </div>
     </div><!-- row end -->
@@ -103,8 +99,8 @@
     <div class="row justify-content-center">
       <div class="col-lg-6 text-center">
         <div class="section-top">
-          <span class="top-title">RJ</span>
-          <h2 class="section-title">Our Expert RJ</h2>
+          <span class="top-title">DJ'S</span>
+          <h2 class="section-title">Nuestros DJ's</h2>
         </div>
       </div>
     </div><!-- row end -->
@@ -149,7 +145,7 @@
     </div><!-- row end -->
 
     <div class="text-center mt-50">
-      <a href="{% url 'radio:radio-jockey' %}" class="btn btn-main">Explore More</a>
+      <a href="{% url 'radio:radio-jockey' %}" class="btn btn-main">más..</a>
     </div>
   </div>
 </section>
